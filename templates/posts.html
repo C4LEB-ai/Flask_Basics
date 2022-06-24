@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+#- - - - GINGER 2 - - - - -
+{% block head %}
+<title> Posts </title>
+{% endblock %}
+
+{% block body %}
+<body><h1>All Posts</h1></body>
+
+    {% for post in posts %}
+        <h1> {{ post.title }} </h1>
+        <p> {{ post.contents }} </p>
+
+        {% if post.Author %}
+            <p>By: {{ post.Author }}</p>
+        {% else %}
+            <p>By: Unknown</p>
+            
+
+        {%endif%}
+    {% endfor %}
+
+{% endblock %}
